@@ -1,0 +1,31 @@
+PREPARACION DEL ENTORNO DE TRABAJO
+- sudo apt-get update
+- sudo apt-get install gcc
+- sudo apt-get install g++
+- sudo apt-get install make
+- sudo apt-get install build-essential linux-headers-`uname -r`
+
+Para compilar timestamps.c
+- make all
+
+Para limpiar los archivos generados al hacer make all
+- make clean
+
+Para imprimir en pantalla los logs del buffer del sistema operativo
+- sudo dmesg
+
+Para limpiar los logs del buffer del sistema operativo
+- sudo dmesg -C
+
+Para insertar el modulo al kernel
+- sudo insmod [nombre_modulo].ko
+
+Para quitar el modulo del kernel
+- sudo rmmod [nombre_modulo].ko
+
+Para revisar los datos del archivo que genera nuestro modulo con la data 
+- cat /proc/[nombre_modulo]
+
+Para ver todos los modulos
+- lsmod
+
