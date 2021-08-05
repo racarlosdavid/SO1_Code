@@ -31,7 +31,7 @@ static int escribir_a_proc(struct seq_file *file_proc, void *v) {
 }
 
 static int abrir_proc(struct inode *inode, struct file *file){
-    return single_open(file, escribir_a_proc,NULL)
+    return single_open(file, escribir_a_proc,NULL);
 }
 
 static struct proc_ops operaciones_archivo = {
