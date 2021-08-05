@@ -53,12 +53,3 @@ static void __exit modulo_c3_cleanup(void){
 
 module_init(modulo_c3_init);
 module_exit(modulo_c3_cleanup); 
-
-/*
-PREPARACION DEL ENTORNO DE TRABAJO
-- sudo apt-get update
-- sudo apt-get install gcc
-- sudo apt-get install g++
-- sudo apt-get install make
-- sudo apt-get install build-essential linux-headers-`uname -r`
-*/
