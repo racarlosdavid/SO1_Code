@@ -1,4 +1,5 @@
-FROM node:alpine3.11
+#FROM node:alpine3.11
+FROM node
 WORKDIR /API1
 COPY package.json .
 COPY package-lock.json .
