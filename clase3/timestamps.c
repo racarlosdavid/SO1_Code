@@ -26,30 +26,30 @@ static int escribir_a_proc(struct seq_file *file_proc, void *v) {
     hours = (current_time / 3600) % 24; // Obtener horas en tiempo actual
 
     seq_printf(file_proc,"{\"timestamp\":\"%d:%d:%d\"}", hours, minutes, seconds);
-
+    
     return 0;
 }
 
-static int abrir_proc(struct inode *inode, struct file *file){
-    return single_open(file, escribir_a_proc,NULL);
+static int abrir_aproc(struct inode *inode, struct  file *file) {
+  return single_open(file, escribir_a_proc, NULL);
 }
 
-static struct proc_ops operaciones_archivo = {
-    .proc_open = abrir_proc,
+static struct proc_ops archivo_operaciones = {    
+    .proc_open = abrir_aproc,
     .proc_read = seq_read
-}
+};
 
-static int __init modulo_c3_init(void){
-    proc_create("timestamps",0,NULL,&operaciones_archivo);
-    printk(KERN_INFO "Hola soy un modulo de ejemplo\n");
+static int __init modulo_c3_init(void) {
+    proc_create("timestamps", 0, NULL, &archivo_operaciones);
+    printk(KERN_INFO "Hola mundo, este es el ejemplo de un modulo de kernel\n");
+
     return 0;
 }
-
-static int __init modulo_c3_exit(void){
-    remove_proc_entry("timestamps",NULL);
-    printk(KERN_INFO "Adios XD\n");
-   
+ 
+static void __exit modulo_c3_cleanup(void){
+    remove_proc_entry("timestamps", NULL);    
+    printk(KERN_INFO "Sayonara mundo, el modulo fue retirado\n");
 }
 
 module_init(modulo_c3_init);
-module_exit(modulo_c3_exit);
+module_exit(modulo_c3_cleanup); 
