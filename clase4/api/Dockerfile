@@ -7,6 +7,6 @@ COPY . .
 RUN npm install
 ENV MONGO_USERNAME mongoadmin
 ENV MONGO_PASSWORD mongo_pass
-ENV MONGO_HOST localhost
+ENV MONGO_HOST dbmongo
 EXPOSE 3000 
 CMD ["npm","start"]
