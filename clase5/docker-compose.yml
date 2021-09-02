@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  dbmongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin 
+      MONGO_INITDB_ROOT_PASSWORD: mongo_pass
+    ports:
+      - 27017:27017
+    networks:
+      - clase5-net
+  api:
+    build: ./api
+    environment:
+      MONGO_USERNAME: mongoadmin
+      MONGO_PASSWORD: mongo_pass
+      MONGO_HOST: dbmongo
+    ports:
+      - 3000:3000
+    networks:
+      - clase5-net
+    depends_on:
+      - dbmongo
+    restart: on-failure
+  web:
+    image: racarlosdavid/mlsa_app:v1
+    ports:
+      - 80:80
+    networks:
+      - clase5-net
+    depends_on:
+      - api
+    restart: on-failure
+
+networks:
+  clase5-net:
+    driver: bridge
