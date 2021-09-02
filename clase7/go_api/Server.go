@@ -15,7 +15,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var MONGO_URL = ""
+var MONGO_URL = "mongodb://cosmosdb-mongo-so1:gBfGBuwGNffYYuuuK3CaEoNKXPqdT9w8Gh45ELsKGiscYZrMXKZY5yxGWsqXWfa6TxQIsvUrPQbO2yfKno9ehA==@cosmosdb-mongo-so1.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmosdb-mongo-so1@"
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
     w.Write([]byte("API GO - CLASE 7!\n"))
