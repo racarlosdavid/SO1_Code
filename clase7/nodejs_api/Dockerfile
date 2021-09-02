@@ -5,6 +5,6 @@ COPY package.json .
 COPY package-lock.json .
 COPY . .
 RUN npm install
-ENV MONGO_URL mongodb://pruebas-cosmo:PglXgbaWesG30bfuFRPliD48hK0PDuH0RMICBXmd0SMCh8mLbIB9efRveTtSHBSOhv3VnqhwVVDC3XKxmoye7w==@pruebas-cosmo.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@pruebas-cosmo@
+ENV MONGO_URL mongodb://cosmosdb-mongo-so1:gBfGBuwGNffYYuuuK3CaEoNKXPqdT9w8Gh45ELsKGiscYZrMXKZY5yxGWsqXWfa6TxQIsvUrPQbO2yfKno9ehA==@cosmosdb-mongo-so1.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmosdb-mongo-so1@
 EXPOSE 3001 
 CMD ["npm","start"]
