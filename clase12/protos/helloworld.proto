@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+  rpc AddCaso(CasoRequest) returns (Reply) {}
+  rpc ListarCasos(Empty) returns (stream CasoReply) {}
+}
+
+message Empty {}
+
+message Reply {
+  string message = 1;
+}
+
+message CasoRequest {
+  string name = 1;
+  string location = 2;
+  int32 age = 3;
+  string infected_type = 4;
+  string state = 5;
+}
+
+message CasoReply {
+  string name = 1;
+  string location = 2;
+  int32 age = 3;
+  string infected_type = 4;
+  string state = 5;
+}
